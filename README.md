@@ -1,4 +1,8 @@
-# FrontEnd
+# Get Started
+
+In order to run the project, I recomend to run with `npm start` command.
+
+# PersonPhone-FrontEnd
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
