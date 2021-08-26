@@ -1,6 +1,6 @@
 # Get Started
 
-In order to run the project, I recomend to run with `npm start` command.
+In order to run the project, I recomend to run with `npm start` command and don't forget to configure your api route on file `proxy.config.js`.
 
 # PersonPhone-FrontEnd
 

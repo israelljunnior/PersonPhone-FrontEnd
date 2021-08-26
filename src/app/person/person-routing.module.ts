@@ -11,9 +11,9 @@ const routes: Routes = [
     children: [
         { path: '', component: ListPersonComponent },
         {
-            path: '/phones', component: PersonPhoneComponent,
+            path: 'phones', component: PersonPhoneComponent,
             children: [
-                { path: '/add', component: AddPhoneComponent },
+                { path: 'add', component: AddPhoneComponent },
                 { path: ':id/edit', component: EditPhoneComponent }
             ]
         }

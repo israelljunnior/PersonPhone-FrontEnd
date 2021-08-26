@@ -18,13 +18,11 @@ export class ListPersonComponent implements OnInit {
       this.personService.GetPersons()
         .subscribe(
             response =>  this.persons = response,
-            error => {
-                console.log(error);
-    });
+            error => console.log(error));
 }
 
 showPhones(person: Person) {
-    this.router.navigateByUrl('phones', { queryParams: { person }});
+    this.router.navigateByUrl('/person/phones', { queryParams: { person }});
 }
 
 

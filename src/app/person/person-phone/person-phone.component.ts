@@ -5,6 +5,7 @@ import { PersonPhone } from '../models/personPhone';
 import {map} from 'rxjs/operators';
 import { PhoneNumberType } from '../models/enums/PhoneNumberType';
 import { PersonPhoneService } from '../services/person-phone.service';
+import { Person } from '../models/person';
 
 @Component({
   selector: 'app-person-phone',
@@ -16,11 +17,14 @@ export class PersonPhoneComponent implements OnInit {
   personPhones: PersonPhone[];
   businessEntityID: number;
 
-  constructor(private personPhoneService: PersonPhoneService, private router: ActivatedRoute) { }
+  constructor(private personPhoneService: PersonPhoneService, private router: ActivatedRoute) {  }
 
   ngOnInit() {
-    this.router.params.pipe(map(p => p.id)).subscribe(result => this.businessEntityID = result);
-    this.router.params.pipe(map(p => p.person)).subscribe(result => this.personPhones = result.phones);
+    let queryParams = this.router.snapshot.params;
+    console.log(queryParams);
+    let person: Person = JSON.parse(queryParams.getAll());
+    this.businessEntityID = person.businessEntityID;
+    this.personPhones = person.phones;
   }
 
   edit(phone: PersonPhone) {
