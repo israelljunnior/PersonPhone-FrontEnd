@@ -1,0 +1,29 @@
+<div class="container">
+  <table class="table">
+      <thead class="thead-light">
+          <tr>
+              <th scope="col">BusinessId</th>                    
+              <th scope="col">name</th>
+              <th scope="col">Phone Count</th>
+              <th scope="col">Options</th>
+          </tr>
+      </thead>
+
+      <tbody *ngIf="persons != null && persons != undefined && persons.length > 0;">
+          <tr *ngFor="let person of persons">        
+              <td>{{person.businessEntityID}}</td>                    
+              <td>{{person.name}}</td>
+              <td>{{person.phones.length}}</td>
+              <td>
+                  <button type="button" class="btn btn-primary" (click)="showPhones(person)"> Show Phones</button>
+              </td>
+          </tr>                    
+      </tbody>
+  </table>    
+
+  <div class="row justify-content-end mt-3">        
+      <div class="col-4">
+          <!--<button type="button" id="btn-add" (click)="" class="btn btn-success mb-5">Register Phone</button>-->
+      </div>
+  </div>
+</div>

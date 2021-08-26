@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table">
+      <thead class="thead-light">
+          <tr>
+              <th scope="col">PhoneNumer</th>
+              <th scope="col">Type</th>
+              <th scope="col">Options</th>
+            </tr>
+      </thead>
+
+      <tbody *ngIf="personPhones != null && personPhones != undefined && personPhones.length > 0; else elseListEmpty">
+          <tr *ngFor="let phone of personPhones">        
+              <td>{{phone.phoneNumber}}</td>                    
+              <td>{{phone.phoneNumberType}}</td>
+              <td>
+                  <button type="button" class="btn btn-primary" (click)="edit(phone)" >edit</button>
+                  <button type="button" class="btn btn-danger" (click)="remove(phone)" >remove</button>
+              </td>
+          </tr>                    
+      </tbody>
+
+      <ng-template #elseListEmpty>
+          <div>
+              <h2>No Registered Phones</h2>
+          </div>            
+      </ng-template>
+  </table>    
+
+  <div class="row justify-content-end mt-3">        
+      <div class="col-4">
+          <!--<button type="button" id="btn-add" (click)="openModalRegisterEmployee()" class="btn btn-success mb-5">Register Employee</button>-->
+      </div>
+  </div>
+</div>
